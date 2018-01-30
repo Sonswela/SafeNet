@@ -1,23 +1,25 @@
 package main;
 
 import java.util.Scanner;
-
+import java.io.*;
 public class ATM {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub
-		Scanner input = new Scanner(System.in);
+		File file = new File("Input.txt");
+		Scanner input = new Scanner(file);
 		Bills register = new Bills();
-
+		
 		System.out.println("Hello Welcome to your friendly neighborhood ATM");
 		System.out.println("What would you like to do today?");
 		System.out.println("R - to restock the machine");
 		System.out.println("W $(dollar amount) - withdraw that amount");
 		System.out.println("I $(type of bill) - check how many of that bill is in the machine");
 		System.out.println("Q - quit");
-		String user = input.nextLine();
+		
 
-		while (!(user.equalsIgnoreCase("Q"))) {
+		while (input.hasNextLine()) {
+			String user = input.nextLine();
 			String temp = user;
 			user = user.substring(0, 1);
 			user = user.toUpperCase();
@@ -40,15 +42,16 @@ public class ATM {
 			} else {
 				System.out.println("Failure: Invalid Command");
 			}
-			System.out.println("Hello Welcome to your friendly neighborhood ATM");
+			/*System.out.println("Hello Welcome to your friendly neighborhood ATM");
 			System.out.println("What would you like to do today?");
 			System.out.println("R - to restock the machine");
 			System.out.println("W $(dollar amount) - withdraw that amount");
 			System.out.println("I $(type of bill) - check how many of that bill is in the machine");
-			System.out.println("Q - quit");
-			user = input.nextLine();
+			System.out.println("Q - quit");*/
+			
 
 		}
+		
 		System.out.println("Quit application");
 		input.close();
 	}
