@@ -8,7 +8,15 @@ public class ATM {
 		// TODO Auto-generated method stub
 		Scanner input = new Scanner(System.in);
 		Bills register = new Bills();
+
+		System.out.println("Hello Welcome to your friendly neighborhood ATM");
+		System.out.println("What would you like to do today?");
+		System.out.println("R - to restock the machine");
+		System.out.println("W $(dollar amount) - withdraw that amount");
+		System.out.println("I $(type of bill) - check how many of that bill is in the machine");
+		System.out.println("Q - quit");
 		String user = input.nextLine();
+
 		while (!(user.equalsIgnoreCase("Q"))) {
 			String temp = user;
 			user = user.substring(0, 1);
@@ -32,10 +40,17 @@ public class ATM {
 			} else {
 				System.out.println("Failure: Invalid Command");
 			}
+			System.out.println("Hello Welcome to your friendly neighborhood ATM");
+			System.out.println("What would you like to do today?");
+			System.out.println("R - to restock the machine");
+			System.out.println("W $(dollar amount) - withdraw that amount");
+			System.out.println("I $(type of bill) - check how many of that bill is in the machine");
+			System.out.println("Q - quit");
 			user = input.nextLine();
 
 		}
 		System.out.println("Quit application");
+		input.close();
 	}
 
 }
