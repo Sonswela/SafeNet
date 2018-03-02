@@ -30,6 +30,7 @@ public class ATM {
 				register.withdraw(Integer.parseInt(temp));
 				register.denominations();
 			} else if (user.equals("I")) {
+				System.out.println("Inventory:");
 				temp = temp.substring(temp.indexOf("$") + 1);
 				while (temp.contains("$")) {
 					String num = temp.substring(0, temp.indexOf("$") - 1);
